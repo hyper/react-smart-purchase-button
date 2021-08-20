@@ -6,8 +6,12 @@ export default function PurchaseButton({ portalUrl, inStockText, outOfStockText,
   const apiUrl = `https://${portalUrl}/api/release${window?.location.search}`;
   const { data, loading, error } = useAPI(apiUrl);
 
+  function handleOpen() {
+    if (data?.link) window.location.replace(data.link);
+  }
+
   return (
-    <button type="button" onClick={() => window.location.replace()} className={className}>
+    <button type="button" onClick={handleOpen} className={className}>
       {(loading || error) && outOfStockText}
       {data && inStockText}
     </button>
