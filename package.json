@@ -1,0 +1,25 @@
+{
+  "name": "react-smart-purchase-button",
+  "version": "1.0.0",
+  "description": "React smart purchase button for Hyper",
+  "main": "src/index.js",
+  "repository": "https://github.com/meta-labs/react-smart-purchase-button.git",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "prop-types": "^15.7.2",
+    "swr": "^0.5.6"
+  }
+}
