@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import useAPI from './swr';
 
 export default function PurchaseButton({ portalUrl, inStockText, outOfStockText, className }) {
-  const apiUrl = `https://${portalUrl}/api/release${window?.location.search}`;
+  const [apiUrl, setApiUrl] = React.useState(null);
   const { data, loading, error } = useAPI(apiUrl);
 
+  React.useEffect(() => {
+    setApiUrl(`https://${portalUrl}/api/release${window.location.search}`);
+  }, [window]);
+
   function handleOpen() {
-    if (data?.link) window.location.replace(data.link);
+    if (data?.link) window?.location.replace(data.link);
   }
 
   return (
