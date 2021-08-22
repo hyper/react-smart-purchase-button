@@ -7,8 +7,10 @@ export default function PurchaseButton({ portalUrl, inStockText, outOfStockText,
   const { data, loading, error } = useAPI(apiUrl);
 
   React.useEffect(() => {
-    setApiUrl(`https://${portalUrl}/api/release${window.location.search}`);
-  }, [window]);
+    setApiUrl(`https://${portalUrl}/api/release${window?.location.search}`);
+  }, []);
+  
+  if (typeof window === 'undefined') return '';
 
   function handleOpen() {
     if (data?.link) window?.location.replace(data.link);
